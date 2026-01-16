@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "323153205111",
+    "project_id": "iqra-student-portal",
+    "storage_bucket": "iqra-student-portal.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323153205111:android:a9c383fd8b302d26dff372",
+        "android_client_info": {
+          "package_name": "com.example.iqra_portal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3MhRMsUVJ0TP3maSH2EhY7fml65H7qkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
