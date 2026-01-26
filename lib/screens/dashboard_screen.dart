@@ -7,11 +7,11 @@ class DashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 1. Get the current logged-in user
+    // Get the current logged-in user
     final User? user = FirebaseAuth.instance.currentUser;
 
     if (user == null) {
-      // Security Fallback: If no user is found, force logout
+      // If no user is found, force logout
       return const Center(child: Text("Error: No user logged in"));
     }
 
@@ -77,7 +77,7 @@ class DashboardScreen extends StatelessWidget {
                           size: 28,
                         ),
                         onPressed: () {
-                          // NEW LOGIC: Go to notifications screen
+                          // Go to notifications screen
                           Navigator.pushNamed(context, '/notifications');
                         },
                       ),
@@ -85,16 +85,16 @@ class DashboardScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 25),
 
-                  // --- REAL DYNAMIC DATA HERE ---
+                  // Dynamic Data Here
                   Text(
-                    'Welcome, $fullName!', // <--- REAL NAME
+                    'Welcome, $fullName!', 
                     style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
-                    department, // <--- REAL DEPARTMENT
+                    department, 
                     style: const TextStyle(
                       fontSize: 14,
                       color: Colors.blueGrey,
@@ -102,15 +102,14 @@ class DashboardScreen extends StatelessWidget {
                     ),
                   ),
 
-                  // -----------------------------
                   const SizedBox(height: 25),
 
-                  // GRID MENU
-                  // GRID MENU - CLEAN 2x2 LAYOUT
+                  
+                  // Grid Menu with 2x2 Layout
                   GridView.count(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    crossAxisCount: 2, // 2 Columns is cleaner for these cards
+                    crossAxisCount: 2, // 2 Columns
                     crossAxisSpacing: 15,
                     mainAxisSpacing: 15,
                     childAspectRatio: 1.3, // Wider cards

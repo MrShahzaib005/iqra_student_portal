@@ -18,6 +18,15 @@ migrate_working_dir/
 *.iws
 .idea/
 
+# Firebase Keys
+.firebase_option.dart
+
+# Firebase & Secrets
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+lib/firebase_options.dart
+*.env
+
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
@@ -32,6 +41,28 @@ migrate_working_dir/
 .pub/
 /build/
 /coverage/
+# Flutter/Dart/Pub
+/build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+
+# Android
+.gradle/
+.idea/
+/android/app/build/
+/android/.gradle/
+
+# iOS
+/ios/.symlinks/
+/ios/Pods/
+/ios/Podfile.lock
+
+# Mac & Windows System Files
+.DS_Store
+Thumbs.db
 
 # Symbolication related
 app.*.symbols

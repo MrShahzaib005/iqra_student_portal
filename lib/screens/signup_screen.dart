@@ -34,9 +34,9 @@ class _SignupScreenState extends State<SignupScreen> {
     '5th Semester', '6th Semester', '7th Semester', '8th Semester'
   ];
 
-  // --- THE BACKEND LOGIC ---
+  // BackEnd Logic
   Future<void> _signUp() async {
-    // 1. Basic Validation
+    // Basic Validation
     if (_passwordController.text != _confirmPasswordController.text) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Passwords do not match!')));
       return;
@@ -49,13 +49,13 @@ class _SignupScreenState extends State<SignupScreen> {
     setState(() => _isLoading = true);
 
     try {
-      // 2. Create User in Firebase Authentication
+      // Create User in Firebase Authentication
       UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
 
-      // 3. Save Student Details to Firestore
+      // Save Student Details to FiresBase
       String uid = userCredential.user!.uid;
 
       await FirebaseFirestore.instance.collection('users').doc(uid).set({
@@ -68,11 +68,11 @@ class _SignupScreenState extends State<SignupScreen> {
         'createdAt': DateTime.now(),
       });
 
-      // 4. NEW LOGIC: Force Logout immediately so they must login manually
+      // Force Logout immediately so they must login manually
       await FirebaseAuth.instance.signOut();
 
       if (mounted) {
-        // Show Green Success Message
+        // Show Message in Success
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Account created successfully! Please Log In.'),

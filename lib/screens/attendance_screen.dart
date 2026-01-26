@@ -37,7 +37,7 @@ class AttendanceScreen extends StatelessWidget {
         'total': 26,
         'present': 18,
         'percentage': 0.69,
-        'status': 'Danger' // Below 70% usually means trouble
+        'status': 'Danger' 
       },
     ];
 

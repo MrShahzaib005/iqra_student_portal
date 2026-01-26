@@ -14,7 +14,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool _biometricEnabled = false;
   bool _darkModeEnabled = false;
 
-  // --- LOGIC: LOGOUT ---
+  // Logout Logic
   Future<void> _logout() async {
     // 1. Sign out from Firebase
     await FirebaseAuth.instance.signOut();
@@ -42,7 +42,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
   }
 
-  // --- LOGIC: DUMMY FEATURES (Dark Mode, Support) ---
+  // Dummy Message for Some Features
   void _showComingSoon(String feature) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -66,12 +66,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // SECTION 1: ACCOUNT
+          // 1.ACCOUNT
           _buildSectionHeader('Account Security'),
           _buildSettingsTile(
             icon: Icons.lock_outline,
             title: 'Change Password',
-            onTap: _changePassword, // <--- Linked to Logic
+            onTap: _changePassword, // Logic Created above
           ),
           _buildSwitchTile(
             icon: Icons.fingerprint,
@@ -139,7 +139,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
           const SizedBox(height: 30),
 
-          // LOGOUT BUTTON (REAL)
+          // Logout Button
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
@@ -150,7 +150,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 15),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               ),
-              onPressed: _logout, // <--- Linked to REAL Logout
+              onPressed: _logout, // Logout Logic created above
               child: const Text('Log Out', style: TextStyle(fontWeight: FontWeight.bold)),
             ),
           ),
@@ -165,7 +165,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ],
       ),
       
-      // BOTTOM NAV (Standard)
+      // Bottom Navbar 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 3, 
         type: BottomNavigationBarType.fixed,
@@ -187,7 +187,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  // --- WIDGET HELPERS ---
+  // Widget Builders
 
   Widget _buildSectionHeader(String title) {
     return Padding(
