@@ -120,7 +120,7 @@ class FeeScreen extends StatelessWidget {
             const SizedBox(height: 15),
 
             // 2. HISTORY LIST
-            ...feeHistory.map((item) => _buildFeeCard(item)).toList(),
+            ...feeHistory.map((item) => _buildFeeCard(item)),
           ],
         ),
       ),
